@@ -23,6 +23,16 @@ Things you may want to cover:
 
 * ...
 
+* Docker
+To build the image, cd into the project directory and use:
+
+    docker build -t website:0.1 .
+
+Now you can start the container:
+
+    docker run --name website -p 8080:3000 -d -w /usr/src/app/website -v "$PWD:/usr/src/app/website" website:0.1
+
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
