@@ -76,4 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Defines authentication credentials
+  config.auth = ActiveSupport::OrderedOptions.new
+  config.auth.username = ENV['AUTH_USERNAME']
+  config.auth.password = ENV['AUTH_PASSWORD']
 end

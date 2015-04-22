@@ -1,38 +1,63 @@
-== README
+= dynduo-server-ruby
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple server which serves data about users, projects and skills.
 
-Things you may want to cover:
+== System dependencies
+* ruby 2.2.1p85
+* Rails 4.2.1
 
-* Ruby version
+== How to run the test suite
+Use rake:
 
-* System dependencies
+    rake test
 
-* Configuration
+== Deployment instructions
 
-* Database creation
+=== Production using OpenShift
+TODO
 
-* Database initialization
+=== Test using Docker
+Start a database image:
 
-* How to run the test suite
+    docker run --name website-mysql \
+        -e MYSQL_ROOT_PASSWORD=changeit \
+        -e MYSQL_DATABASE=website-test \
+        -d \
+        mysql
 
-* Services (job queues, cache servers, search engines, etc.)
+Cd into the project directory and create a new container with a link to your database:
 
-* Deployment instructions
+    docker run --name website-test \
+        -p 8080:3000 \
+        -d \
+        -w /usr/src/app/website \
+        -v "$PWD:/usr/src/app/website" \
+        -e RAILS_ENV=test \
+        -e AUTH_USERNAME=admin \
+        -e AUTH_PASSWORD=admin \
+        --link website-mysql:mysql \
+        website:0.1
 
-* ...
-
-* Docker
+=== Development using Docker
 To build the image, cd into the project directory and use:
 
     docker build -t website:0.1 .
 
 Now you can start the container:
 
-    docker run --name website -p 8080:3000 -d -w /usr/src/app/website -v "$PWD:/usr/src/app/website" website:0.1
+    docker run --name website \
+        -p 8080:3000 \
+        -d \
+        -w /usr/src/app/website \
+        -v "$PWD:/usr/src/app/website" \
+        website:0.1
 
+To use rails:
 
+    docker exec -i website rails
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+After adding a gem:
+
+    docker run -it --rm -v "$PWD:/usr/src/app/website" -w /usr/src/app/website website:0.1 bundle
+    docker build -t website:0.1 .
+
