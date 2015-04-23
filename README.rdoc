@@ -1,6 +1,7 @@
 = dynduo-server-ruby
 
 A simple server which serves data about users, projects and skills.
+[![Build Status](https://travis-ci.org/sonata82/dynduo-server-ruby.svg)](https://travis-ci.org/sonata82/dynduo-server-ruby)
 
 == System dependencies
 * ruby 2.2.1p85
@@ -14,7 +15,12 @@ Use rake:
 == Deployment instructions
 
 === Production using OpenShift
-TODO
+Start rhc docker:
+
+    docker run --rm --name rhc -ti \
+        -v ~/.openshift:/root/.openshift \
+        -v ~/.ssh:/private \
+        bigm/rhc bash
 
 === Test using Docker
 Start a database image:
