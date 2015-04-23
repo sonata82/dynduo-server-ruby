@@ -1,7 +1,7 @@
 = dynduo-server-ruby
 
 A simple server which serves data about users, projects and skills.
-[![Build Status](https://travis-ci.org/sonata82/dynduo-server-ruby.svg)](https://travis-ci.org/sonata82/dynduo-server-ruby)
+{<img src="https://travis-ci.org/sonata82/dynduo-server-ruby.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/sonata82/dynduo-server-ruby]
 
 == System dependencies
 * ruby 2.2.1p85
