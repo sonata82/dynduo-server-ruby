@@ -18,3 +18,4 @@
 
 # Ignore generated files
 /doc/
+/coverage/
