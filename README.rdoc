@@ -20,9 +20,15 @@ Use rake:
 Start rhc docker:
 
     docker run --rm --name rhc -ti \
-        -v ~/.openshift:/root/.openshift \
-        -v ~/.ssh:/private \
+        -v /c/Users/plantengar/.openshift:/root/.openshift \
+        -v /c/Users/plantengar/.ssh:/private \
         bigm/rhc bash
+
+Add OpenShift repo:
+
+    git reomte add openshift ssh://553c0c15fcf933ed0300011b@rubyserver-dynduo.rhcloud.com/~/git/rubyserver.git/
+
+
 
 === Test using Docker
 Start a database image:
