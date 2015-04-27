@@ -21,8 +21,8 @@ Use rake:
 Start docker container to use `rhc`:
 
     docker run --rm --name rhc -ti \
-        -v /c/Users/plantengar/.openshift:/root/.openshift \
-        -v /c/Users/plantengar/.ssh:/private \
+        -v ~/.openshift:/root/.openshift \
+        -v ~/.ssh:/private \
         bigm/rhc bash
 
 Add OpenShift repository:
@@ -32,8 +32,6 @@ Add OpenShift repository:
 Push code to OpenShift repository, initiating deployment:
 
     git push openshift master
-
-
 
 === Test using Docker
 Start a database image:

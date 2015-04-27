@@ -1,3 +1,1 @@
-FROM rails:onbuild
-
-RUN bundle config --global frozen 0
+FROM sonata82/openshift-rails:onbuild
