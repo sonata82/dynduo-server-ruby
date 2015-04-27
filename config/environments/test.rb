@@ -42,6 +42,6 @@ Rails.application.configure do
 
   # Defines authentication credentials
   config.auth = ActiveSupport::OrderedOptions.new
-  config.auth.username = "admin"
-  config.auth.password = "admin"
+  config.auth.username = ENV['AUTH_USERNAME']
+  config.auth.password = ENV['AUTH_PASSWORD']
 end
