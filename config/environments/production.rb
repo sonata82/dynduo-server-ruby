@@ -81,4 +81,5 @@ Rails.application.configure do
   config.auth = ActiveSupport::OrderedOptions.new
   config.auth.username = ENV['AUTH_USERNAME']
   config.auth.password = ENV['AUTH_PASSWORD']
+  puts "Authentication uses #{ENV['AUTH_USERNAME']} and #{ENV['AUTH_PASSWORD']}"
 end
