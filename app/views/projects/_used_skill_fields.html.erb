@@ -1,0 +1,7 @@
+<div class="nested-fields project-used-skill-fields">
+  <div id="used_skill_from_list">
+    <%= f.association :skill, :collection => Skill.order(:name), :prompt => 'Choose an existing skill' %>
+  </div>
+  <%= link_to_add_association 'or create a new skill', f, :skill %>
+  <%= link_to_remove_association 'remove skill', f %>
+</div>

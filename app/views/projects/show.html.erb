@@ -14,5 +14,9 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
+<p>
+  <strong>Used skills:</strong>
+  <%= @project.skills.map(&:name).join(", ") %>
+</p>
 
 <%= link_to 'Back', projects_path %>

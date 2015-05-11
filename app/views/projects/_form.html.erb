@@ -33,6 +33,13 @@
     <%= f.text_area :description %>
   </p>
 
+  <div id="skills">
+    <%= f.simple_fields_for :used_skills do |used_skill| %>
+      <%= render 'used_skill_fields', :f => used_skill %>
+    <% end %>
+    <%= link_to_add_association 'Add a skill', f, :used_skills %>
+  </div>
+
   <p>
     <%= f.submit %>
   </p>

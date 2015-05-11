@@ -55,6 +55,10 @@ Cd into the project directory and create a new container with a link to your dat
         --link website-mysql:mysql \
         website:0.1
 
+Now run:
+
+    docker exec -i website-mysql rake
+
 === Development using Docker
 To build the image, cd into the project directory and use:
 
