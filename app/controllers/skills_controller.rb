@@ -1,11 +1,17 @@
 class SkillsController < ApplicationController
+  protect_from_forgery except: :index
+
   def index
     @skills = Skill.all
-    @skills = Skill.where("useInWordcloud = ", params[:useInWordcloud]) unless params[:useInWordcloud].blank?
+    @skills = Skill.where("useInWordcloud = ?", params[:useInWordcloud] == "true") unless params[:useInWordcloud].blank?
 
     respond_to do |format|
-      format.html
-      format.json { render json: @skills }
+      if params[:callback]
+        format.js { render :json => @skills, :callback => params[:callback] }
+      else
+        format.html
+        format.json { render json: @skills }
+      end
     end
   end
 

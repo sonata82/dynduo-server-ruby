@@ -1,10 +1,17 @@
 class ProjectsController < ApplicationController
+  protect_from_forgery except: :index
+
   def index
     @projects = Project.all
+    @projects = Project.order(params[:orderBy][:column] + " " + params[:orderBy][:direction]) unless params[:orderBy].blank?
 
     respond_to do |format|
-      format.html
-      format.json { render json: @projects }
+      if params[:callback]
+        format.js { render :json => @projects, :callback => params[:callback] }
+      else
+        format.html
+        format.json { render json: @projects }
+      end
     end
   end
 
