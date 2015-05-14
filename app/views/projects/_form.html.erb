@@ -20,12 +20,12 @@
 
   <p>
     <%= f.label :beginDate %><br>
-    <%= f.date_select :beginDate %>
+    <%= f.date_select :beginDate, {:start_year => Date.today.year - 20, :end_year => Date.today.year} %>
   </p>
 
   <p>
     <%= f.label :endDate %><br>
-    <%= f.date_select :endDate %>
+    <%= f.date_select :endDate, {:include_blank => true, :start_year => Date.today.year - 20, :end_year => Date.today.year} %>
   </p>
 
   <p>
