@@ -7,9 +7,9 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should respond when json is used" do
-    @request.headers['Accept'] = Mime::JSON
-    get :index
+  test "should respond when jsonp is used" do
+    @request.headers["Accept"] = "*/*"
+    get :index, callback: "callback"
     assert_response :success
   end
 

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     if !Rails.env.development?
-      if request.format != Mime::JSON
+      unless request.get? and params[:callback]
         authenticate_or_request_with_http_basic do |username, password|
           username == Rails.configuration.auth.username && password == Rails.configuration.auth.password
         end
