@@ -53,7 +53,7 @@ Cd into the project directory and create a new container with a link to your dat
         -e AUTH_USERNAME=admin \
         -e AUTH_PASSWORD=admin \
         --link website-mysql:mysql \
-        website:0.1
+        website
 
 Now run:
 
@@ -62,7 +62,7 @@ Now run:
 === Development using Docker
 To build the image, cd into the project directory and use:
 
-    docker build -t website:0.1 .
+    docker build -t website:latest .
 
 Now you can start the container:
 
@@ -71,7 +71,7 @@ Now you can start the container:
         -d \
         -w /usr/src/app/website \
         -v "$PWD:/usr/src/app/website" \
-        website:0.1
+        website
 
 To use rails:
 
@@ -79,6 +79,6 @@ To use rails:
 
 After adding a gem:
 
-    docker run -it --rm -v "$PWD:/usr/src/app/website" -w /usr/src/app/website website:0.1 bundle
-    docker build -t website:0.1 .
+    docker run -it --rm -v "$PWD:/usr/src/app/website" -w /usr/src/app/website website bundle
+    docker build -t website .
 
