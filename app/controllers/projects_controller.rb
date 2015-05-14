@@ -5,10 +5,10 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @projects = Project.order(params[:orderBy][:column] + " " + params[:orderBy][:direction]) unless params[:orderBy].blank?
 
-    respond_to do |format|
-      if params[:callback]
-        format.js { render :json => @projects, :callback => params[:callback] }
-      else
+    if params[:callback]
+      render :json => @projects, :callback => params[:callback]
+    else
+      respond_to do |format|
         format.html
         format.json { render json: @projects }
       end

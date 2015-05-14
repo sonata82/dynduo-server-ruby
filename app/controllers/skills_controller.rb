@@ -5,10 +5,10 @@ class SkillsController < ApplicationController
     @skills = Skill.all
     @skills = Skill.where("useInWordcloud = ?", params[:useInWordcloud] == "true") unless params[:useInWordcloud].blank?
 
-    respond_to do |format|
-      if params[:callback]
-        format.js { render :json => @skills, :callback => params[:callback] }
-      else
+    if params[:callback]
+        render :json => @skills, :callback => params[:callback]
+    else
+      respond_to do |format|  
         format.html
         format.json { render json: @skills }
       end
