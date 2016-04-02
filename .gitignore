@@ -19,3 +19,6 @@
 # Ignore generated files
 /doc/
 /coverage/
+
+# Ignore system generated files
+.DS_Store
