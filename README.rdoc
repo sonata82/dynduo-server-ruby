@@ -8,7 +8,7 @@ A simple server which serves data about users, projects and skills.
 
 == System dependencies
 * ruby 2.0.0p645
-* Rails 4.1.8
+* Rails 4.1.x
 
 == How to run the test suite
 Use rake:
@@ -25,7 +25,7 @@ Start docker container to use `rhc`:
         -v ~/.ssh:/private \
         bigm/rhc bash
 
-Add OpenShift repository:
+To deploy app to OpenShift, add remote URL to your repository:
 
     git remote add openshift ssh://553c0c15fcf933ed0300011b@rubyserver-dynduo.rhcloud.com/~/git/rubyserver.git/
 
