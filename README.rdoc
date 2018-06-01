@@ -36,11 +36,10 @@ Push code to OpenShift repository, initiating deployment:
 === Test using Docker
 Start a database image:
 
-    docker run --name website-mysql \
-        -e MYSQL_ROOT_PASSWORD=changeit \
-        -e MYSQL_DATABASE=website-test \
-        -d \
-        mysql
+    docker run --name website-postgres \
+        -e POSTGRES_PASSWORD=changeit \
+        -e POSTGRES_DB=website-test \
+        -d postgres:9.6
 
 Cd into the project directory and create a new container with a link to your database:
 
@@ -52,7 +51,7 @@ Cd into the project directory and create a new container with a link to your dat
         -e RAILS_ENV=test \
         -e AUTH_USERNAME=admin \
         -e AUTH_PASSWORD=admin \
-        --link website-mysql:mysql \
+        --link website-postgres:postgres \
         website
 
 Now run:
@@ -80,5 +79,5 @@ To use rails:
 After adding a gem:
 
     docker run -it --rm -v "$PWD:/usr/src/app/website" -w /usr/src/app/website website bundle
-    docker build -t website .
+    docker build -t website:latest .
 
