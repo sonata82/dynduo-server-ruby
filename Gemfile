@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Adding Ruby dependency version for Heroku, but not really needed, see: https://github.com/travis-ci/travis-ci/issues/953
+ruby '2.3.7'
+
 # OpenShift uses 1.5.2, see https://bugzilla.redhat.com/show_bug.cgi?id=1184179
 gem 'rack', '1.5.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -53,5 +56,3 @@ end
 
 gem 'rails_12factor', group: :production
 
-# Adding Ruby dependency version for Heroku, but not really needed, see: https://github.com/travis-ci/travis-ci/issues/953
-ruby '2.3.7' rescue nil

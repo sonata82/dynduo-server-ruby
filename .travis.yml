@@ -9,6 +9,8 @@ addons:
   postgresql: "9.6"
 before_script:
   - psql -c 'create database website_test;' -U postgres
+before_install:
+  - sed -i '4d' Gemfile
 env:
   global:
     - POSTGRES_PORT_5432_TCP_ADDR=localhost
