@@ -8,7 +8,7 @@ gem 'rack', '1.5.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 # Use Postgres for test and production environments, see https://github.com/rails/rails/issues/31673 and https://stackoverflow.com/q/44607324
 gem 'pg', '~> 0.20.0'
 # Use SCSS for stylesheets
