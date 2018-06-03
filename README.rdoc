@@ -33,6 +33,19 @@ Push code to OpenShift repository, initiating deployment:
 
     git push openshift master
 
+=== Production using Heroku
+Start docker container to use `heroku` and create a new app:
+
+    docker run --rm -e HEROKU_API_KEY="insert-your-key-here" wingrunr21/alpine-heroku-cli create
+
+To deploy app, add remote URL to your repository:
+
+    git remote add heroku https://git.heroku.com/some-name-59273.git
+
+Push code to Heroku, initiating deployment:
+
+    git push heroku master
+
 === Test using Docker
 Start a database image:
 

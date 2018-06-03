@@ -53,3 +53,5 @@ end
 
 gem 'rails_12factor', group: :production
 
+# Adding Ruby dependency version for Heroku, but not really needed, see: https://github.com/travis-ci/travis-ci/issues/953
+ruby '2.3.7' rescue nil
