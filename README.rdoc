@@ -4,10 +4,10 @@ A simple server which serves data about users, projects and skills.
 
 {<img src="https://travis-ci.org/sonata82/dynduo-server-ruby.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/sonata82/dynduo-server-ruby]
 {<img src="https://coveralls.io/repos/github/sonata82/dynduo-server-ruby/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/sonata82/dynduo-server-ruby?branch=master] 
-{<img src="https://gemnasium.com/sonata82/dynduo-server-ruby.svg" alt="Dependency Status" />}[https://gemnasium.com/sonata82/dynduo-server-ruby]
+{<img src="https://img.shields.io/badge/watched%20by-depfu-blue.svg" alt="Depfu" />}[https://depfu.com]
 
 == System dependencies
-* ruby 2.0.0p645
+* ruby 2.2
 * Rails 4.1.x
 
 == How to run the test suite
