@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby '2.3.7'
 
 # OpenShift uses 1.5.2, see https://bugzilla.redhat.com/show_bug.cgi?id=1184179
-gem 'rack', '1.5.5'
+gem 'rack', '1.6.11'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1'
 # Use sqlite3 as the database for Active Record
